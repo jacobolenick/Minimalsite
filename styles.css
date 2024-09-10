@@ -1,0 +1,491 @@
+:root {
+    --bg-color: #ffffff;
+    --text-color: #333333;
+    --card-bg: #ffffff;
+    --card-border: #dddddd;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    color: #333;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+
+    font-size: 32px;
+    font-weight: 600;
+    color: #222;
+}
+
+h2 {
+    font-size: 18px;
+    font-weight: 300;
+    color: #626262;
+}
+
+h3 {
+    font-size: 16px;
+    font-weight: 300;
+    color: #626262;
+}
+
+.headingsub {
+    font-size: 16px;
+    color: #636363;
+    max-width: 600px;
+}
+.publix {
+color: rgb(10, 142, 67);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #ffffff;
+    padding-bottom: 112px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.logo {
+    height: 40px; /* Adjust this value to match your logo's height */
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    margin-left: 32px; /* This creates the 32px space between logo and links */
+}
+
+.nav-links a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333333; /* Adjust this color as needed */
+    font-weight: 500;
+}
+
+.intro {
+
+    padding-bottom: 86px;
+}
+
+#mode-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 24px;
+    margin-left: 20px;
+    padding: 0;
+}
+
+#mode-toggle .moon {
+    display: none;
+}
+
+.dark-mode #mode-toggle .sun {
+    display: none;
+}
+
+.dark-mode #mode-toggle .moon {
+    display: inline;
+}
+
+.project-card {
+    background-color: #ffffff00;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card .image-container {
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.project-card .content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card h3 {
+    font-size: 18px;
+    font-weight: 200;
+    margin: 0 0 10px;
+    color: #333333;
+}
+
+.project-card p {
+    font-size: 16px;
+    margin: 0;
+    flex-grow: 1;
+    color: #636363;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-bottom: 40px;
+    max-width: 800px;
+}
+
+.blog-post {
+    margin-bottom: 20px;
+}
+
+.date {
+    color: #666;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        margin-left: 0;
+        margin-top: 20px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        margin-left: 0;
+        margin-right: 15px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    .project-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.8); /* White with 80% opacity */
+    opacity: 0;
+    transition: opacity 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.modal.show {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    backdrop-filter: blur(5px); /* Less blur */
+}
+
+.modal-content {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #e0e0e0; /* Light gray border */
+    width: 95%;
+    height: 95%;
+    max-width: 1400px;
+    max-height: 1000px;
+    overflow: hidden;
+    position: relative;
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+    border-radius: 32px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+}
+
+.modal.show .modal-content {
+    transform: scale(1);
+}
+
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+#modal-body {
+    padding: 20px;
+    height: calc(100% - 40px); /* Adjust for padding */
+    overflow-y: auto;
+    overflow-x: hidden;
+    font-size: 20px; /* Even larger base font size */
+    line-height: 1.6; /* Adjusted line height for readability */
+}
+
+#modal-body h2 {
+    font-size: 32px; /* Larger heading size */
+    margin-bottom: 20px;
+    text-align: center; /* Center align the title */
+}
+
+#modal-body h3 {
+    font-size: 28px;
+}
+
+#modal-body p {
+    margin-bottom: 20px;
+}
+
+#modal-body img {
+    min-width: 80%; /* Ensures images are at least 80% of the container width */
+    max-width: 100%;
+    max-height: 600px; /* Increased from 450px */
+    width: auto;
+    height: auto;
+    display: block;
+    margin: 30px auto;
+    object-fit: contain;
+}
+
+.modal-image-container {
+    margin-bottom: 40px; /* Increased from 30px for more space around larger images */
+    text-align: center;
+}
+
+.modal-text-content {
+    max-width: 800px; /* Increased from 700px for better readability with larger text */
+    margin: 0 auto;
+}
+
+.social-links {
+    display: flex;
+    gap: 10px; /* Spacing between pills */
+    margin-top: 20px; /* Adjust as needed */
+}
+
+.social-links a {
+    background-color: #f0f0f0; /* Light gray background */
+    color: #333; /* Dark text color */
+    text-decoration: none;
+    padding: 8px 16px; /* Vertical and horizontal padding */
+    border-radius: 20px; /* Rounded corners for pill shape */
+    font-size: 14px; /* Adjust as needed */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+    background-color: #e0e0e0; /* Slightly darker on hover */
+    color: #000; /* Darker text on hover */
+}
+
+.shadowbox {
+    display: none;
+    position: fixed;
+    z-index: 1500;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.shadowbox-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1200px;
+    max-height: 80vh;
+    object-fit: contain;
+}
+
+.close-shadowbox {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close-shadowbox:hover,
+.close-shadowbox:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.pill {
+    background-color: #f7f7f7; /* Slightly darker gray */
+    color: #222; /* Slightly darker text for contrast */
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.project-pills {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#experience {
+    padding: 40px 0;
+}
+
+#experience h2 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.job-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.job-card {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0; /* Light gray bottom stroke */
+    transition: transform 0.3s ease;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+}
+
+.company-logo {
+    width: 60px; /* Reduced from 80px */
+    height: 60px; /* Reduced from 80px */
+    object-fit: cover;
+    margin-right: 20px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.job-details {
+    flex-grow: 1;
+}
+
+.company-name {
+    font-size: 15px; /* Slightly reduced */
+    font-weight: 600;
+    margin: 0 0 5px 0;
+    color: #2f2f2f;
+}
+
+.job-title {
+    font-size: 13px; /* Slightly reduced */
+    color: #636363;
+    margin: 0 0 5px 0;
+}
+
+.job-year {
+    font-size: 11px; /* Slightly reduced */
+    color: #888;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .job-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .company-logo {
+        width: 50px; /* Even smaller on mobile */
+        height: 50px;
+        margin-bottom: 10px; /* Reduced from 15px */
+    }
+}
+
+.site-container {
+    width: 100%;
+    max-width: 1200px; /* Adjust this value as needed */
+    margin: 0 auto;
+    padding: 0 20px; /* Add some padding on the sides */
+}
+
+.video-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.video-control-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.video-control-btn:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}

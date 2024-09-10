@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" class="light-mode">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav>
+                <div class="logo">
+                    <img src="images/site-logo.svg" alt="Logo">
+                </div>
+                <div class="nav-links">
+                    <a href="#home">Home</a>
+                    <a href="about.html">About</a>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <section class="intro">
+                <h1>hey, It's Jacob! ✌️ </h1>
+                <p class="headingsub">I am a Senior UX Designer <b class="publix">@ Publix</b> that builds products that make people's lives better. Previously I worked at <b>Credit One Bank</b>, <b>Cisco</b>, <b>Wells Fargo</b>, <b>Paramount+</b>, and <b>AXS.com</b>.</p>
+                <div class="social-links">
+                    <a href="#">Linkedin</a>
+                    <a href="#">Instagram</a>
+                    <a href="#">X</a>
+                    <a href="#">Youtube</a>
+                </div>
+            </section>
+
+            <section id="projects">
+                <h2>Works</h2>
+                <div class="project-grid">
+                    <div class="project-card" data-project="1">
+                        <div class="image-container">
+                            <img src="images/axs123.jpg" alt="Project 1">
+                        </div>
+                        <div class="content">
+                            <h3>AXS | Internal tool for ticket teller to sell event tickets</h3>
+                            <p>An internal tool that was also white labeled to B2B clients.</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="2">
+                        <div class="image-container">
+                            <img src="images/crt1.jpg" alt="Project 2">
+                        </div>
+                        <div class="content">
+                            <h3>Get scholarships as a basketball athlete</h3>
+                            <p>A mobile app that helps athletes get scholarships.</p>
+                        </div>
+                    </div>
+                    <div class="project-card" data-project="3">
+                        <div class="image-container">
+                            <img src="images/Org1.jpg" alt="Project 3">
+                        </div>
+                        <div class="content">
+                            <h3>Easily manage your organization and allocations</h3>
+                            <p>Ba better UX redesign and design system built on Tailwind.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Replace the blog section with this -->
+            <section id="experience">
+                <h2>Work Experience</h2>
+                <div class="job-list">
+                    <div class="job-card">
+                        <img src="images/publix.jpg" alt="Company 1 Logo" class="company-logo">
+                        <div class="job-details">
+                            <h3 class="company-name">Publix</h3>
+                            <p class="job-title">Senior UX Designer</p>
+                            <p class="job-year">2024 - Present</p>
+                        </div>
+                    </div>
+                    <div class="job-card">
+                        <img src="images/c1b.jpg" alt="Company 2 Logo" class="company-logo">
+                        <div class="job-details">
+                            <h3 class="company-name">Credit One Bank</h3>
+                            <p class="job-title">Ux Design Lead</p>
+                            <p class="job-year">2023 - 2024</p>
+                        </div>
+                    </div>
+                    <div class="job-card">
+                        <img src="images/cisco_logo.jpg" alt="Company 3 Logo" class="company-logo">
+                        <div class="job-details">
+                            <h3 class="company-name">Cisco</h3>
+                            <p class="job-title">Senior Product Designer</p>
+                            <p class="job-year">2023</p>
+                        </div>
+                    </div>
+                    <div class="job-card">
+                        <img src="images/wf.jpg" alt="Company 3 Logo" class="company-logo">
+                        <div class="company-name">Wells Fargo</h3>
+                            <p class="job-title">Senior Lead Product Designer</p>
+                            <p class="job-year">2022 - 2023</p>
+                        </div>
+                    </div>
+                    <div class="job-card">
+                        <img src="images/pplus.jpg" alt="Company 3 Logo" class="company-logo">
+                        <div class="job-details">
+                            <h3 class="company-name">Paramount Plus</h3>
+                            <p class="job-title">Product Designer</p>
+                            <p class="job-year">2022</p>
+                        </div>
+                    </div>
+                    <div class="job-card">
+                        <img src="images/bb.jpg" alt="Company 3 Logo" class="company-logo">
+                        <div class="job-details">
+                            <h3 class="company-name">Crtside</h3>
+                            <p class="job-title">UX Designer</p>
+                            <p class="job-year">2020 - 2022 </p>
+                        </div>
+                    </div>
+                    <div class="job-card">
+                        <img src="images/axss.jpg" alt="Company 3 Logo" class="company-logo">
+                        <div class="job-details">
+                            <h3 class="company-name">AXS</h3>
+                            <p class="job-title">UX/UI Designer</p>
+                            <p class="job-year">2021</p>
+                        </div>
+                    </div>
+                    <div class="job-card">
+                        <img src="images/im.jpg" alt="Company 3 Logo" class="company-logo">
+                        <div class="job-details">
+                            <h3 class="company-name">Incredible Marketing</h3>
+                            <p class="job-title">UX/Web Designer</p>
+                            <p class="job-year">2020 - 2021 </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+        </main>
+    </div>
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+    <div id="shadowbox" class="shadowbox">
+        <span class="close-shadowbox">&times;</span>
+        <img class="shadowbox-content" id="shadowbox-image">
+    </div>
+    <script src="script.js"></script>
+    <script src="modal.js"></script>
+</body>
+</html>
